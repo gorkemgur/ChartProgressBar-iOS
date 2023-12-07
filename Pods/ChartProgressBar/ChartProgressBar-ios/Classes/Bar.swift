@@ -62,7 +62,7 @@ class Bar: UIView {
     func setProgressValue(_ currentValue: CGFloat, threshold: CGFloat = 100.0) {
         let yOffset = ((threshold - currentValue) / threshold) * frame.size.height / 1
         
-        UIView.animate(withDuration: self.animationDuration, delay: 0, options: UIViewAnimationOptions(), animations: {
+        UIView.animate(withDuration: self.animationDuration, delay: 0, options: UIView.AnimationOptions(), animations: {
             self.progressView.frame.size.height = self.frame.size.height - yOffset
             self.progressView.frame.origin.y = yOffset
         }, completion: nil)

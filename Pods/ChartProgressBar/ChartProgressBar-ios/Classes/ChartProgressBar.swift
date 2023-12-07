@@ -64,8 +64,8 @@ public class ChartProgressBar: UIView {
 		
 		let stackView = UIStackView()
 		stackView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: height)
-		stackView.axis = UILayoutConstraintAxis.horizontal
-		stackView.distribution = UIStackViewDistribution.fillEqually
+        stackView.axis = NSLayoutConstraint.Axis.horizontal
+        stackView.distribution = UIStackView.Distribution.fillEqually
 		
 		let barViewWidth = (self.frame.width) / (CGFloat(chartData.count))
 		
@@ -430,7 +430,7 @@ extension UIColor {
 		var int = UInt32()
 		Scanner(string: hex).scanHexInt32(&int)
 		let a, r, g, b: UInt32
-		switch hex.characters.count {
+        switch hex.count {
 		case 3: // RGB (12-bit)
 			(a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
 		case 6: // RGB (24-bit)
